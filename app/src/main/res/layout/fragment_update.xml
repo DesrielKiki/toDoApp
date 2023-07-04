@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="args"
+            type="com.desriel.todoapp.fragments.update.UpdateFragmentArgs" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_24sdp"
+        tools:context=".fragments.update.UpdateFragment">
+
+        <EditText
+            android:id="@+id/et_currentTitle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60sdp"
+            android:ems="10"
+            android:text="@{args.currentItem.title}"
+            android:inputType="textPersonName"
+            android:background="@drawable/custom_input"
+            android:hint="@string/title"
+            android:maxLines="1"
+            android:maxLength="20"
+            android:paddingStart="@dimen/_24sdp"
+            android:paddingEnd="@dimen/_24sdp"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/_10sdp"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:id="@+id/currentSpinner"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_below="@+id/et_currentTitle"
+            android:entries="@array/Priorities"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:background="@drawable/custom_input"
+            android:parsePriorityToInt="@{args.currentItem.priority}"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_8sdp" />
+
+        <EditText
+            android:id="@+id/et_currentDescription"
+            android:hint="Description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@{args.currentItem.description}"
+            android:background="@drawable/custom_input"
+            android:layout_below="@+id/currentSpinner"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:paddingStart="@dimen/_24sdp"
+            android:paddingEnd="@dimen/_24sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
+
+    </RelativeLayout>
+</layout>
